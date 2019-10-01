@@ -3,20 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	var locale string = "de"
-	var greeting string = "Hello"
-
-	if locale == "en" {
+	var locale, greeting string
+	var languages = [4]string{"en", "es", "de", "fr"}
+	locale = languages[0]
+	switch locale {
+	case "en":
 		greeting = "Hello"
-
-	} else if locale == "es" {
-		greeting = "Hola"
-	} else if locale == "de" {
+	case "de":
 		greeting = "Guten Tag"
-	} else {
-		greeting = "Yurrr"
-	}
+	case "es":
+		greeting = "Hola"
 
+	case "fr":
+		greeting = "Bonjour"
+	default:
+		greeting = "Yurrrrrr"
+	}
+	/*
+		if locale == "en" {
+			greeting = "Hello"
+
+		} else if locale == "es" {
+			greeting = "Hola"
+		} else if locale == "de" {
+			greeting = "Guten Tag"
+		} else {
+			greeting = "Yurrr"
+		}
+	*/
 	fmt.Printf(greeting + " Go\n")
 
 }
