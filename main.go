@@ -1,11 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
+	rand.Seed(time.Now().Unix())
 	var locale, greeting string
-	var languages = [4]string{"en", "es", "de", "fr"}
-	locale = languages[0]
+	var languages = [5]string{"en", "es", "de", "fr", "it"}
+	locale = languages[rand.Intn(5)]
 	switch locale {
 	case "en":
 		greeting = "Hello"
@@ -16,6 +21,8 @@ func main() {
 
 	case "fr":
 		greeting = "Bonjour"
+	case "it":
+		greeting = "Ciao"
 	default:
 		greeting = "Yurrrrrr"
 	}
